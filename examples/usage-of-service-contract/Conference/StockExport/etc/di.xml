@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="conference_stock_export" xsi:type="object">Conference\StockExport\Command\ExportCommand</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <preference for="Conference\StockExport\Source\EntryGateway" type="Conference\StockExport\Source\MagentoEntryGateway" />
+    <preference for="Conference\StockExport\Source\Entry" type="Conference\StockExport\Source\MagentoEntry" />
+</config>
